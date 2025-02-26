@@ -47,7 +47,8 @@
             "@php vendor/bin/testbench package:discover --ansi"
         ],
         "test": "./vendor/bin/phpunit",
-        "test-coverage": "./vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": "./vendor/bin/phpunit --coverage-html coverage",
+        "phpstan": "phpstan analyse"
     },
     "config": {
         "sort-packages": true

@@ -1,0 +1,229 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 3
+			path: src/Commands/OneTimeOperationShowCommand.php
+
+		-
+			message: '#^Access to an undefined property TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:\$processed_at\.$#'
+			identifier: property.notFound
+			count: 2
+			path: src/Commands/OneTimeOperationShowCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationShowCommand\:\:filterOperationLinesByStatus\(\) has parameter \$operationOutputLines with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Commands/OneTimeOperationShowCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationShowCommand\:\:filterOperationLinesByStatus\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Commands/OneTimeOperationShowCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationShowCommand\:\:getOperationLinesForOutput\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Commands/OneTimeOperationShowCommand.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:filter\(\) expects \(callable\(mixed, int\|string\)\: bool\)\|null, Closure\(TimoKoerber\\LaravelOneTimeOperations\\Commands\\Utils\\OperationsLineElement\)\: bool given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Commands/OneTimeOperationShowCommand.php
+
+		-
+			message: '#^Access to an undefined property TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Cannot call method getOperationName\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:dispatchOperationJob\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:filterOperationsByTags\(\) has parameter \$unprocessedOperationFiles with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:filterOperationsByTags\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:getDelay\(\) should return int\|null but returns int\|string\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:filter\(\) expects \(callable\(mixed, int\|string\)\: bool\)\|null, Closure\(TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile\)\: bool given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Parameter \#1 \$operationFile of method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:dispatchOperationJob\(\) expects TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Parameter \#1 \$operationFile of method TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:storeOperation\(\) expects TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Property TimoKoerber\\LaravelOneTimeOperations\\Commands\\OneTimeOperationsProcessCommand\:\:\$tags type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/OneTimeOperationsProcessCommand.php
+
+		-
+			message: '#^Deprecated in PHP 8\.4\: Parameter \#3 \$processedAt \(Illuminate\\Support\\Carbon\) is implicitly nullable via default value null\.$#'
+			identifier: parameter.implicitlyNullable
+			count: 1
+			path: src/Commands/Utils/OperationsLineElement.php
+
+		-
+			message: '#^Deprecated in PHP 8\.4\: Parameter \#4 \$tag \(string\) is implicitly nullable via default value null\.$#'
+			identifier: parameter.implicitlyNullable
+			count: 1
+			path: src/Commands/Utils/OperationsLineElement.php
+
+		-
+			message: '#^Access to an undefined property TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/Models/Operation.php
+
+		-
+			message: '#^Class TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Models/Operation.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:__construct\(\) has parameter \$attributes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Models/Operation.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:getConnectionName\(\) should return string\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Models/Operation.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperation\:\:getDelay\(\) should return string but returns int\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperation.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile\:\:getClassObject\(\) should return TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperation but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperationFile.php
+
+		-
+			message: '#^Property TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile\:\:\$classObject \(TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperation\|null\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/OneTimeOperationFile.php
+
+		-
+			message: '#^Access to an undefined property TimoKoerber\\LaravelOneTimeOperations\\Models\\Operation\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:buildFilename\(\) has parameter \$operationName with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getAllFiles\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getAllOperationFiles\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getAllOperationFiles\(\) should return Illuminate\\Support\\Collection&iterable\<SplFileInfo\> but returns Illuminate\\Support\\Collection\<\(int\|string\), TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getClassObjectByName\(\) should return TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperation but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getDirectoryName\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getTableName\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getUnprocessedFiles\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getUnprocessedFiles\(\) should return Illuminate\\Support\\Collection&iterable\<SplFileInfo\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Method TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationManager\:\:getUnprocessedOperationFiles\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:filter\(\) expects \(callable\(mixed, int\|string\)\: bool\)\|null, Closure\(SplFileInfo\)\: bool given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/OneTimeOperationManager.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) expects callable\(mixed, int\|string\)\: TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile, Closure\(SplFileInfo\)\: TimoKoerber\\LaravelOneTimeOperations\\OneTimeOperationFile given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/OneTimeOperationManager.php

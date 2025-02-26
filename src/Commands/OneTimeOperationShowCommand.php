@@ -15,6 +15,10 @@ class OneTimeOperationShowCommand extends OneTimeOperationsCommand
 
     protected $description = 'List of all one-time operations';
 
+    /**
+     *
+     * @var array<string>
+     */
     protected array $validFilters = [
         self::LABEL_PENDING,
         self::LABEL_PROCESSED,
@@ -34,7 +38,9 @@ class OneTimeOperationShowCommand extends OneTimeOperationsCommand
                 $this->components->info('No operations found.');
             }
 
-            /** @var OperationsLineElement $lineElement */
+            /**
+ * @var OperationsLineElement $lineElement 
+*/
             foreach ($operationOutputLines as $lineElement) {
                 $lineElement->output($this->components);
             }
@@ -90,7 +96,9 @@ class OneTimeOperationShowCommand extends OneTimeOperationsCommand
 
         // add processed and pending operations
         foreach ($operationFiles->toArray() as $file) {
-            /** @var OneTimeOperationFile $file */
+            /**
+ * @var OneTimeOperationFile $file 
+*/
             if ($model = $file->getModel()) {
                 $operationOutputLines->add(OperationsLineElement::make($model->name, self::LABEL_PROCESSED, $model->processed_at, $file->getClassObject()->getTag()));
             } else {
@@ -103,8 +111,10 @@ class OneTimeOperationShowCommand extends OneTimeOperationsCommand
 
     protected function filterOperationLinesByStatus(Collection $operationOutputLines): Collection
     {
-        return $operationOutputLines->filter(function (OperationsLineElement $lineElement) {
-            return $this->shouldDisplayByFilter($lineElement->getStatus());
-        })->collect();
+        return $operationOutputLines->filter(
+            function (OperationsLineElement $lineElement) {
+                return $this->shouldDisplayByFilter($lineElement->getStatus());
+            }
+        )->collect();
     }
 }
