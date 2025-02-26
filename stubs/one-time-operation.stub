@@ -14,6 +14,12 @@ return new class extends OneTimeOperation
      */
     protected string $queue = 'default';
 
+
+    /**
+     * The queue that the job will be delayed in seconds.
+     */
+    protected int $delay = 60;
+
     /**
      * A tag name, that this operation can be filtered by.
      */

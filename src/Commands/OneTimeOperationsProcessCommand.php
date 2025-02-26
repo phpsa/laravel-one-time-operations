@@ -79,10 +79,12 @@ class OneTimeOperationsProcessCommand extends OneTimeOperationsCommand implement
 
     protected function processOperationFile(OneTimeOperationFile $operationFile): int
     {
-        $this->components->task($operationFile->getOperationName(), function () use ($operationFile) {
-            $this->dispatchOperationJob($operationFile);
-            $this->storeOperation($operationFile);
-        });
+        $this->components->task(
+            $operationFile->getOperationName(), function () use ($operationFile) {
+                $this->dispatchOperationJob($operationFile);
+                $this->storeOperation($operationFile);
+            }
+        );
 
         $this->newLine();
         $this->components->info('Processing finished.');
@@ -100,12 +102,14 @@ class OneTimeOperationsProcessCommand extends OneTimeOperationsCommand implement
 
         $this->components->info(sprintf('Processing operation %s.', $operationModel->name));
 
-        $this->components->task($operationModel->name, function () use ($operationModel) {
-            $operationFile = OneTimeOperationManager::getOperationFileByModel($operationModel);
+        $this->components->task(
+            $operationModel->name, function () use ($operationModel) {
+                $operationFile = OneTimeOperationManager::getOperationFileByModel($operationModel);
 
-            $this->dispatchOperationJob($operationFile);
-            $this->storeOperation($operationFile);
-        });
+                $this->dispatchOperationJob($operationFile);
+                $this->storeOperation($operationFile);
+            }
+        );
 
         $this->newLine();
         $this->components->info('Processing finished.');
@@ -132,10 +136,12 @@ class OneTimeOperationsProcessCommand extends OneTimeOperationsCommand implement
         $this->components->info($processingOutput);
 
         foreach ($unprocessedOperationFiles as $operationFile) {
-            $this->components->task($operationFile->getOperationName(), function () use ($operationFile) {
-                $this->dispatchOperationJob($operationFile);
-                $this->storeOperation($operationFile);
-            });
+            $this->components->task(
+                $operationFile->getOperationName(), function () use ($operationFile) {
+                    $this->dispatchOperationJob($operationFile);
+                    $this->storeOperation($operationFile);
+                }
+            );
         }
 
         $this->newLine();
@@ -161,7 +167,9 @@ class OneTimeOperationsProcessCommand extends OneTimeOperationsCommand implement
     protected function dispatchOperationJob(OneTimeOperationFile $operationFile)
     {
         if ($this->isAsyncMode($operationFile)) {
-            OneTimeOperationProcessJob::dispatch($operationFile->getOperationName())->onQueue($this->getQueue($operationFile));
+            OneTimeOperationProcessJob::dispatch($operationFile->getOperationName())
+                ->onQueue($this->getQueue($operationFile))
+                ->delay($this->getDelay($operationFile);
 
             return;
         }
@@ -203,11 +211,18 @@ class OneTimeOperationsProcessCommand extends OneTimeOperationsCommand implement
         return $operationFile->getClassObject()->getQueue() ?: null;
     }
 
+    protected function getDelay(OneTimeOperationFile $operationFile): ?int
+    {
+        return $operationFile->getClassObject()->getDelay() ?: 0;
+    }
+
     protected function filterOperationsByTags(Collection $unprocessedOperationFiles): Collection
     {
-        return $unprocessedOperationFiles->filter(function (OneTimeOperationFile $operationFile) {
-            return $this->tagMatched($operationFile);
-        })->collect();
+        return $unprocessedOperationFiles->filter(
+            function (OneTimeOperationFile $operationFile) {
+                return $this->tagMatched($operationFile);
+            }
+        )->collect();
     }
 
     protected function tagOptionsAreValid(): bool
