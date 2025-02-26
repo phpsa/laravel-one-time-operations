@@ -169,7 +169,7 @@ class OneTimeOperationsProcessCommand extends OneTimeOperationsCommand implement
         if ($this->isAsyncMode($operationFile)) {
             OneTimeOperationProcessJob::dispatch($operationFile->getOperationName())
                 ->onQueue($this->getQueue($operationFile))
-                ->delay($this->getDelay($operationFile);
+                ->delay($this->getDelay($operationFile));
 
             return;
         }
