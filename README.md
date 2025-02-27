@@ -3,6 +3,37 @@
 
 Run operations once after deployment - just like you do it with migrations!
 
+This fork is setup to add a delay to the operations to help with kuberneties deployments:
+
+1) in the helm file add:
+```
+lifecycle:
+  postStart:
+    exec:
+      command:
+        - /cnb/lifecycle/launcher
+        - "composer post-deploy"
+```
+
+2) in your composer file add under scripts
+```
+ "post-deploy": [
+            "@php artisan optimize",
+            "@php artisan operations:process"
+        ],
+```
+
+this is the process needed for usage with the internal pipelines: as the kuberneties gitlab pipeline deployment does the following:
+1) builds container
+2) runs tests
+3) deploys to live in the following steps
+3.1) starts pod and runs migrations
+3.2) starts x number of pods checks health and will at end of start run the post-deploy command
+
+By allowing a 60s delay this will allow the jobs file to be found by the queue runner,running earlier causing some issues as the worker pods may still be under the older version.
+
+
+
 -----
 
 **Take your CI/CD to the next Level with One-Time Operations for Laravel**! 🚀
@@ -26,7 +57,7 @@ This package is for you if...
 Require this package with composer:
 
 ```shell
-composer require timokoerber/laravel-one-time-operations
+composer require phpsa/laravel-one-time-operations
 ```
 
 Create the required table in your database:
